@@ -1,0 +1,775 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0151EF26-5149-419A-8195-225647F38ADC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Suivi</RootNamespace>
+    <AssemblyName>Suivi</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ASP.Web.UI.PopupControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Sol_Suivi_2\Sol_Suivi\Suivi\bin\ASP.Web.UI.PopupControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DataVisualization.Design" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Administrateur\Paiements_Details.aspx" />
+    <Content Include="Administrateur\Messages.aspx" />
+    <Content Include="Administrateur\Message.aspx" />
+    <Content Include="App_Data\ASPNETDB.MDF">
+    </Content>
+    <Content Include="App_Data\aspnetdb_log.ldf">
+      <DependentUpon>ASPNETDB.MDF</DependentUpon>
+    </Content>
+    <Content Include="Authentification.aspx" />
+    <Content Include="Enseignant\Notes.aspx" />
+    <Content Include="Enseignant\Messages.aspx" />
+    <Content Include="Enseignant\Message.aspx" />
+    <Content Include="Enseignant\Message_New.aspx" />
+    <Content Include="Parent\Message.aspx" />
+    <Content Include="Parent\Messages.aspx" />
+    <Content Include="Parent\Message_New.aspx" />
+    <Content Include="Parent\Paiements.aspx" />
+    <Content Include="Parent\Paiements_Historiques.aspx" />
+    <Content Include="Parent\Absences.aspx" />
+    <Content Include="Parent\Absences_Details.aspx" />
+    <Content Include="Parent\Notes.aspx" />
+    <Content Include="Parent\Notes_Details.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administrateur\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Admin_Compte.aspx.cs">
+      <DependentUpon>Admin_Compte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Admin_Compte.aspx.designer.cs">
+      <DependentUpon>Admin_Compte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Classes_Modif.aspx.cs">
+      <DependentUpon>Classes_Modif.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Classes_Modif.aspx.designer.cs">
+      <DependentUpon>Classes_Modif.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Classes_Supp.aspx.cs">
+      <DependentUpon>Classes_Supp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Classes_Supp.aspx.designer.cs">
+      <DependentUpon>Classes_Supp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Eleves.aspx.cs">
+      <DependentUpon>Eleves.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Eleves.aspx.designer.cs">
+      <DependentUpon>Eleves.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Eleves_Ajout.aspx.cs">
+      <DependentUpon>Eleves_Ajout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Eleves_Ajout.aspx.designer.cs">
+      <DependentUpon>Eleves_Ajout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Eleves_Modif.aspx.cs">
+      <DependentUpon>Eleves_Modif.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Eleves_Modif.aspx.designer.cs">
+      <DependentUpon>Eleves_Modif.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Enseignants_Affectation.aspx.cs">
+      <DependentUpon>Enseignants_Affectation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Enseignants_Affectation.aspx.designer.cs">
+      <DependentUpon>Enseignants_Affectation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Evenements.aspx.cs">
+      <DependentUpon>Evenements.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Evenements.aspx.designer.cs">
+      <DependentUpon>Evenements.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Evenements_Ajout.aspx.cs">
+      <DependentUpon>Evenements_Ajout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Evenements_Ajout.aspx.designer.cs">
+      <DependentUpon>Evenements_Ajout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Evenements_Details.aspx.cs">
+      <DependentUpon>Evenements_Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Evenements_Details.aspx.designer.cs">
+      <DependentUpon>Evenements_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Evenements_Modif.aspx.cs">
+      <DependentUpon>Evenements_Modif.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Evenements_Modif.aspx.designer.cs">
+      <DependentUpon>Evenements_Modif.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Classes.aspx.cs">
+      <DependentUpon>Classes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Classes.aspx.designer.cs">
+      <DependentUpon>Classes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Enseignants.aspx.cs">
+      <DependentUpon>Enseignants.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Enseignants.aspx.designer.cs">
+      <DependentUpon>Enseignants.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Enseignants_Ajout.aspx.cs">
+      <DependentUpon>Enseignants_Ajout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Enseignants_Ajout.aspx.designer.cs">
+      <DependentUpon>Enseignants_Ajout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Enseignants_Modif.aspx.cs">
+      <DependentUpon>Enseignants_Modif.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Enseignants_Modif.aspx.designer.cs">
+      <DependentUpon>Enseignants_Modif.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Matieres.aspx.cs">
+      <DependentUpon>Matieres.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Matieres.aspx.designer.cs">
+      <DependentUpon>Matieres.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Matieres_Ajout.aspx.cs">
+      <DependentUpon>Matieres_Ajout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Matieres_Ajout.aspx.designer.cs">
+      <DependentUpon>Matieres_Ajout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Matieres_Modif.aspx.cs">
+      <DependentUpon>Matieres_Modif.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Matieres_Modif.aspx.designer.cs">
+      <DependentUpon>Matieres_Modif.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Notifications.aspx.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Notifications.aspx.designer.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Parents.aspx.cs">
+      <DependentUpon>Parents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Parents.aspx.designer.cs">
+      <DependentUpon>Parents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Parents_Ajout.aspx.cs">
+      <DependentUpon>Parents_Ajout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Parents_Ajout.aspx.designer.cs">
+      <DependentUpon>Parents_Ajout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Parents_Modif.aspx.cs">
+      <DependentUpon>Parents_Modif.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Parents_Modif.aspx.designer.cs">
+      <DependentUpon>Parents_Modif.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Classes_Details.aspx.cs">
+      <DependentUpon>Classes_Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Classes_Details.aspx.designer.cs">
+      <DependentUpon>Classes_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Classes_Ajout.aspx.cs">
+      <DependentUpon>Classes_Ajout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Classes_Ajout.aspx.designer.cs">
+      <DependentUpon>Classes_Ajout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Services.aspx.cs">
+      <DependentUpon>Services.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Services.aspx.designer.cs">
+      <DependentUpon>Services.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Services_Ajout.aspx.cs">
+      <DependentUpon>Services_Ajout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Services_Ajout.aspx.designer.cs">
+      <DependentUpon>Services_Ajout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Services_Modif.aspx.cs">
+      <DependentUpon>Services_Modif.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Services_Modif.aspx.designer.cs">
+      <DependentUpon>Services_Modif.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Demandes.aspx.cs">
+      <DependentUpon>Demandes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Demandes.aspx.designer.cs">
+      <DependentUpon>Demandes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Demandes_Details.aspx.cs">
+      <DependentUpon>Demandes_Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Demandes_Details.aspx.designer.cs">
+      <DependentUpon>Demandes_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Conges.aspx.cs">
+      <DependentUpon>Conges.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Conges.aspx.designer.cs">
+      <DependentUpon>Conges.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Conges_Modif.aspx.cs">
+      <DependentUpon>Conges_Modif.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Conges_Modif.aspx.designer.cs">
+      <DependentUpon>Conges_Modif.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Absences.aspx.cs">
+      <DependentUpon>Absences.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Absences.aspx.designer.cs">
+      <DependentUpon>Absences.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Paiements.aspx.cs">
+      <DependentUpon>Paiements.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Paiements.aspx.designer.cs">
+      <DependentUpon>Paiements.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Paiements_Ajout.aspx.cs">
+      <DependentUpon>Paiements_Ajout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Paiements_Ajout.aspx.designer.cs">
+      <DependentUpon>Paiements_Ajout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Paiements_Historiques.aspx.cs">
+      <DependentUpon>Paiements_Historiques.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Paiements_Historiques.aspx.designer.cs">
+      <DependentUpon>Paiements_Historiques.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Paiements_Details.aspx.cs">
+      <DependentUpon>Paiements_Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Paiements_Details.aspx.designer.cs">
+      <DependentUpon>Paiements_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Messages.aspx.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Messages.aspx.designer.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Message.aspx.cs">
+      <DependentUpon>Message.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrateur\Message.aspx.designer.cs">
+      <DependentUpon>Message.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authentification.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Authentification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authentification.aspx.designer.cs">
+      <DependentUpon>Authentification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Enseignant\Demandes.aspx.cs">
+      <DependentUpon>Demandes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Enseignant\Demandes.aspx.designer.cs">
+      <DependentUpon>Demandes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Enseignant\Demandes_Ajout.aspx.cs">
+      <DependentUpon>Demandes_Ajout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Enseignant\Demandes_Ajout.aspx.designer.cs">
+      <DependentUpon>Demandes_Ajout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Enseignant\Enseignant.Master.cs">
+      <DependentUpon>Enseignant.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Enseignant\Enseignant.Master.designer.cs">
+      <DependentUpon>Enseignant.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Enseignant\Enseignant_Compte.aspx.cs">
+      <DependentUpon>Enseignant_Compte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Enseignant\Enseignant_Compte.aspx.designer.cs">
+      <DependentUpon>Enseignant_Compte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Enseignant\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Enseignant\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Enseignant\Demandes_Modif.aspx.cs">
+      <DependentUpon>Demandes_Modif.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Enseignant\Demandes_Modif.aspx.designer.cs">
+      <DependentUpon>Demandes_Modif.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Enseignant\Notes.aspx.cs">
+      <DependentUpon>Notes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Enseignant\Notes.aspx.designer.cs">
+      <DependentUpon>Notes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Enseignant\Notifications.aspx.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Enseignant\Notifications.aspx.designer.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Enseignant\Messages.aspx.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Enseignant\Messages.aspx.designer.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Enseignant\Message.aspx.cs">
+      <DependentUpon>Message.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Enseignant\Message.aspx.designer.cs">
+      <DependentUpon>Message.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Enseignant\Message_New.aspx.cs">
+      <DependentUpon>Message_New.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Enseignant\Message_New.aspx.designer.cs">
+      <DependentUpon>Message_New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parent\Message.aspx.cs">
+      <DependentUpon>Message.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parent\Message.aspx.designer.cs">
+      <DependentUpon>Message.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parent\Messages.aspx.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parent\Messages.aspx.designer.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parent\Message_New.aspx.cs">
+      <DependentUpon>Message_New.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parent\Message_New.aspx.designer.cs">
+      <DependentUpon>Message_New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parent\Parent.Master.cs">
+      <DependentUpon>Parent.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parent\Parent.Master.designer.cs">
+      <DependentUpon>Parent.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Parent\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parent\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parent\Parent_Compte.aspx.cs">
+      <DependentUpon>Parent_Compte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parent\Parent_Compte.aspx.designer.cs">
+      <DependentUpon>Parent_Compte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parent\Evenements.aspx.cs">
+      <DependentUpon>Evenements.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parent\Evenements.aspx.designer.cs">
+      <DependentUpon>Evenements.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parent\Evenements_Details.aspx.cs">
+      <DependentUpon>Evenements_Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parent\Evenements_Details.aspx.designer.cs">
+      <DependentUpon>Evenements_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parent\Notifications.aspx.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parent\Notifications.aspx.designer.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parent\Paiements.aspx.cs">
+      <DependentUpon>Paiements.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parent\Paiements.aspx.designer.cs">
+      <DependentUpon>Paiements.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parent\Paiements_Historiques.aspx.cs">
+      <DependentUpon>Paiements_Historiques.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parent\Paiements_Historiques.aspx.designer.cs">
+      <DependentUpon>Paiements_Historiques.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parent\Absences.aspx.cs">
+      <DependentUpon>Absences.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parent\Absences.aspx.designer.cs">
+      <DependentUpon>Absences.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parent\Absences_Details.aspx.cs">
+      <DependentUpon>Absences_Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parent\Absences_Details.aspx.designer.cs">
+      <DependentUpon>Absences_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parent\Notes.aspx.cs">
+      <DependentUpon>Notes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parent\Notes.aspx.designer.cs">
+      <DependentUpon>Notes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parent\Notes_Details.aspx.cs">
+      <DependentUpon>Notes_Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parent\Notes_Details.aspx.designer.cs">
+      <DependentUpon>Notes_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Administrateur\Admin.Master" />
+    <Content Include="Administrateur\Index.aspx" />
+    <Content Include="css\design.css" />
+    <Content Include="img\1.png" />
+    <Content Include="img\2.png" />
+    <Content Include="img\3.png" />
+    <Content Include="img\4.png" />
+    <Content Include="img\abs-add.png" />
+    <Content Include="img\abs-modif.png" />
+    <Content Include="img\abs-supp.png" />
+    <Content Include="img\add-user-16.png" />
+    <Content Include="img\book-stack-16.png" />
+    <Content Include="img\breadcrumb_divider.png" />
+    <Content Include="img\btn_submit.png" />
+    <Content Include="img\btn_view_site.png" />
+    <Content Include="img\class-add.png" />
+    <Content Include="img\class-modif.png" />
+    <Content Include="img\class-supp.png" />
+    <Content Include="img\class.png" />
+    <Content Include="img\clock-16.png" />
+    <Content Include="img\conference-call-16.png" />
+    <Content Include="img\conge-modif.png" />
+    <Content Include="img\conge-supp.png" />
+    <Content Include="img\conge.png" />
+    <Content Include="img\edit-user-16.png" />
+    <Content Include="img\eleve-add.png" />
+    <Content Include="img\eleve-modif.png" />
+    <Content Include="img\eleve-supp.png" />
+    <Content Include="img\event-add.png" />
+    <Content Include="img\event-modif.png" />
+    <Content Include="img\event-supp.png" />
+    <Content Include="img\event.png" />
+    <Content Include="img\header_bg.png" />
+    <Content Include="img\header_shadow.png" />
+    <Content Include="img\icn_add_user.png" />
+    <Content Include="img\icn_alert_error.png" />
+    <Content Include="img\icn_alert_info.png" />
+    <Content Include="img\icn_alert_success.png" />
+    <Content Include="img\icn_alert_warning.png" />
+    <Content Include="img\icn_audio.png" />
+    <Content Include="img\icn_categories.png" />
+    <Content Include="img\icn_edit.png" />
+    <Content Include="img\icn_edit_article.png" />
+    <Content Include="img\icn_folder.png" />
+    <Content Include="img\icn_jump_back.png" />
+    <Content Include="img\icn_logout.png" />
+    <Content Include="img\icn_new_article.png" />
+    <Content Include="img\icn_photo.png" />
+    <Content Include="img\icn_profile.png" />
+    <Content Include="img\icn_search.png" />
+    <Content Include="img\icn_security.png" />
+    <Content Include="img\icn_settings.png" />
+    <Content Include="img\icn_tags.png" />
+    <Content Include="img\icn_trash.png" />
+    <Content Include="img\icn_user.png" />
+    <Content Include="img\icn_video.png" />
+    <Content Include="img\icn_view_users.png" />
+    <Content Include="img\logout.png" />
+    <Content Include="img\mat-add.png" />
+    <Content Include="img\mat-modif.png" />
+    <Content Include="img\mat-supp.png" />
+    <Content Include="img\message.png" />
+    <Content Include="img\module_footer_bg.png" />
+    <Content Include="img\notif.png" />
+    <Content Include="img\paiement.png" />
+    <Content Include="img\pay-add.png" />
+    <Content Include="img\pay-modif.png" />
+    <Content Include="img\pay-supp.png" />
+    <Content Include="img\post_message.png" />
+    <Content Include="img\reglage.png" />
+    <Content Include="img\remove-user-16.png" />
+    <Content Include="img\secondary_bar.png" />
+    <Content Include="img\secondary_bar_shadow.png" />
+    <Content Include="img\sep.png" />
+    <Content Include="img\serv-add.png" />
+    <Content Include="img\serv-modif.png" />
+    <Content Include="img\serv-supp.png" />
+    <Content Include="img\service.png" />
+    <Content Include="img\sidebar.png" />
+    <Content Include="img\sidebar_divider.png" />
+    <Content Include="img\sidebar_shadow.png" />
+    <Content Include="img\student-16.png" />
+    <Content Include="img\table_sorter_header.png" />
+    <Content Include="js\hideshow.js" />
+    <Content Include="js\jquery-1.5.2.min.js" />
+    <Content Include="js\jquery.equalHeight.js" />
+    <Content Include="js\jquery.tablesorter.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Parent\Parent.Master" />
+    <Content Include="Parent\Index.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Administrateur\Admin_Compte.aspx" />
+    <Content Include="Administrateur\Classes.aspx" />
+    <Content Include="Administrateur\Classes_Modif.aspx" />
+    <Content Include="Administrateur\Classes_Supp.aspx" />
+    <Content Include="Administrateur\Eleves.aspx" />
+    <Content Include="Administrateur\Eleves_Ajout.aspx" />
+    <Content Include="Administrateur\Eleves_Modif.aspx" />
+    <Content Include="Administrateur\Enseignants.aspx" />
+    <Content Include="Administrateur\Enseignants_Ajout.aspx" />
+    <Content Include="Administrateur\Enseignants_Modif.aspx" />
+    <Content Include="Administrateur\Evenements.aspx" />
+    <Content Include="Administrateur\Evenements_Ajout.aspx" />
+    <Content Include="Administrateur\Evenements_Details.aspx" />
+    <Content Include="Administrateur\Evenements_Modif.aspx" />
+    <Content Include="Administrateur\Matieres.aspx" />
+    <Content Include="Administrateur\Matieres_Ajout.aspx" />
+    <Content Include="Administrateur\Matieres_Modif.aspx" />
+    <Content Include="Administrateur\Notifications.aspx" />
+    <Content Include="Administrateur\Parents.aspx" />
+    <Content Include="Administrateur\Parents_Ajout.aspx" />
+    <Content Include="Administrateur\Parents_Modif.aspx" />
+    <Content Include="Administrateur\Classes_Details.aspx" />
+    <Content Include="Administrateur\Classes_Ajout.aspx" />
+    <Content Include="Administrateur\Services.aspx" />
+    <Content Include="Administrateur\Services_Ajout.aspx" />
+    <Content Include="Administrateur\Services_Modif.aspx" />
+    <Content Include="App_Data\Scolarite.mdf">
+    </Content>
+    <Content Include="App_Data\Scolarite_log.LDF">
+      <DependentUpon>Scolarite.mdf</DependentUpon>
+    </Content>
+    <Content Include="Enseignant\Enseignant.Master" />
+    <Content Include="Enseignant\Index.aspx" />
+    <Content Include="img\Avatar\352.jpg" />
+    <Content Include="img\Avatar\589519-enseignante-6e-annee-anglais-intensif.jpg" />
+    <Content Include="img\Avatar\ens3652.jpg" />
+    <Content Include="img\Avatar\enseignant-innovant.png" />
+    <Content Include="img\Avatar\portrait-face-profil.jpg" />
+    <Content Include="img\backf.jpg" />
+    <Content Include="img\bill.png" />
+    <Content Include="img\classBtn.png" />
+    <Content Include="img\conge-add.png" />
+    <Content Include="img\congeBtn.png" />
+    <Content Include="img\eleveBtn.png" />
+    <Content Include="img\ens-add.png" />
+    <Content Include="img\ens-modif.png" />
+    <Content Include="img\ens-supp.png" />
+    <Content Include="img\ens.png" />
+    <Content Include="img\ensBtn.png" />
+    <Content Include="img\eventBtn.png" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\msgBtn.png" />
+    <Content Include="img\note-add.png" />
+    <Content Include="img\note-modif.png" />
+    <Content Include="img\note-supp.png" />
+    <Content Include="img\note.png" />
+    <Content Include="img\parentBtn.png" />
+    <Content Include="img\phone16.png" />
+    <Content Include="img\phone24.png" />
+    <Content Include="img\servBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Administrateur\web.config" />
+    <Content Include="Enseignant\Demandes.aspx" />
+    <Content Include="Enseignant\Demandes_Ajout.aspx" />
+    <Content Include="Enseignant\Enseignant_Compte.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Administrateur\Demandes.aspx" />
+    <Content Include="Administrateur\Demandes_Details.aspx" />
+    <Content Include="Administrateur\Conges.aspx" />
+    <Content Include="Administrateur\Conges_Modif.aspx" />
+    <Content Include="Administrateur\Enseignants_Affectation.aspx" />
+    <Content Include="Administrateur\Absences.aspx" />
+    <Content Include="Administrateur\Paiements.aspx" />
+    <Content Include="Administrateur\Paiements_Ajout.aspx" />
+    <Content Include="Administrateur\Paiements_Historiques.aspx" />
+    <Content Include="Enseignant\web.config" />
+    <Content Include="Enseignant\Demandes_Modif.aspx" />
+    <Content Include="Enseignant\Notifications.aspx" />
+    <Content Include="img\contact24.png" />
+    <Content Include="img\email24.png" />
+    <Content Include="img\ens-link.png" />
+    <Content Include="Parent\Parent_Compte.aspx" />
+    <Content Include="Parent\Evenements.aspx" />
+    <Content Include="Parent\Evenements_Details.aspx" />
+    <Content Include="Parent\Notifications.aspx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49512</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

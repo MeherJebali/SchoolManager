@@ -1,0 +1,179 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Suivi.Administrateur.Admin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<meta charset="UTF-8">
+<title>
+    <asp:contentplaceholder ID="Title" runat="server"></asp:contentplaceholder>
+</title>
+<link rel="stylesheet" href="../css/design.css" type="text/css"/>
+<script src="../js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<script src="../js/hideshow.js" type="text/javascript"></script>
+<script src="../js/jquery.tablesorter.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="../js/jquery.equalHeight.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() 
+    { 
+		$(".tablesorter").tablesorter(); 
+	} 
+	);
+	$(document).ready(function() 
+	{
+		//When page loads...
+		$(".tab_content").hide(); //Hide all content
+		$("ul.tabs li:first").addClass("active").show(); //Activate first tab
+		$(".tab_content:first").show(); //Show first tab content
+		//On Click Event
+		$("ul.tabs li").click(function() 
+			{
+				$("ul.tabs li").removeClass("active"); //Remove any "active" class
+				$(this).addClass("active"); //Add "active" class to selected tab
+				$(".tab_content").hide(); //Hide all tab content
+
+				var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+				$(activeTab).fadeIn(); //Fade in the active ID content
+				return false;
+			}
+		);
+	}
+	);
+</script>
+<script type="text/javascript">
+    $(function()
+	{
+		$('.column').equalHeight();
+    }
+	);
+</script>
+</head>
+<body>
+<form id="form1" runat="server">
+<div id="header">
+	<div id="bannerLeft">
+		<h1><a href="Index.aspx">Accueil </a></h1>
+	</div>
+	<div id="bannerRight">
+		<h2>
+            Tabeau de Bord
+        </h2>
+		<div id="btn_view_site"><a href="#">Voir Site</a></div>
+	</div>
+</div>
+<div id="panel">
+	<div id="profile">
+		<div id="bjr"><p><b>Bienvenue 
+            <asp:LoginName ID="LoginName1" runat="server" />
+        </b></p></div>
+		<br/>
+		<p><b>
+            <asp:Label ID="lbldate" runat="server" Text="Label"></asp:Label>
+        </b></p>
+		<br/>
+		<a href="Messages.aspx"><img src="../img/message.png"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Notifications.aspx"><img src="../img/notif.png"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Admin_Compte.aspx"><img src="../img/reglage.png"/></a>
+		<br/>
+		<br/>
+		<div id="logout">
+            <asp:LoginView ID="LoginView1" runat="server">
+                <LoggedInTemplate>
+                    <asp:LoginStatus ID="LoginStatus1" runat="server"  LogoutPageUrl="~/Authentification.aspx"/>
+                </LoggedInTemplate>
+            </asp:LoginView>
+        </div>
+	</div>
+	<div id="logo">
+	</div>
+</div>
+<div id="menuHeader">
+	<div id="liens">
+		<h3>Menu</h3>
+	</div>
+	<div id="dash">
+		<h3>
+            <asp:ContentPlaceHolder ID="header" runat="server">
+            </asp:ContentPlaceHolder>
+        </h3>
+	</div>
+</div>
+<div id="Conteneur">
+	<aside id="sidebar" class="column">
+		<h3>Gestion Des Utilisateurs</h3>
+		<ul class="toggle">
+		    <h5>Gestion des Enseignant</h5>
+			<ul class="toggle">
+				<li class="afficher_ens"><a href="Enseignants.aspx">Afficher les enseignants</a></li>
+				<li class="ajouter_ens"><a href="Enseignants_Ajout.aspx">Ajouter enseignant</a></li>
+				<li class="modifier_ens"><a href="Enseignants_Modif.aspx">Modifier enseignant</a></li>
+				<li class="affecter_ens"><a href="Enseignants_Affectation.aspx">Affecter enseignant</a></li>
+			</ul>
+			<h5>Gestion des Parents</h5>
+			<ul class="toggle">
+			    <li class="afficher_users"><a href="Parents.aspx">Afficher les parents</a></li>
+			    <li class="ajouter_user"><a href="Parents_Ajout.aspx">Ajouter parent</a></li>
+			    <li class="modifier_user"><a href="Parents_Modif.aspx">Modifier parent</a></li>
+			</ul>
+		</ul>	
+		<h3>Gestion de scolarité</h3>
+		<ul class="toggle">
+			<h5>Gestion des élèves</h5>
+			<ul class="toggle">
+				<li class="afficher_eleves"><a href="Eleves.aspx">Afficher les élèves</a></li>
+				<li class="ajouter_eleve"><a href="Eleves_Ajout.aspx">Ajouter élève</a></li>
+				<li class="modifier_eleve"><a href="Eleves_Modif.aspx">Modifier élève</a></li>
+			</ul>
+			<h5>Gestion des Classes</h5>
+			<ul class="toggle">
+				<li class="afficher_classes"><a href="Classes.aspx">Afficher les classes</a></li>
+				<li class="ajouter_classe"><a href="Classes_Ajout.aspx">Ajouter classe</a></li>
+				<li class="modifier_classe"><a href="Classes_Modif.aspx">Modifier classe</a></li>
+				<li class="supprimer_classe"><a href="Classes_Supp.aspx">Supprimer classe</a></li>
+			</ul>
+			<h5>Gestion des matières</h5>
+			<ul class="toggle">
+				<li class="afficher_matieres"><a href="Matieres.aspx">Afficher des matières</a></li>
+				<li class="ajouter_matiere"><a href="Matieres_Ajout.aspx">Ajouter matière</a></li>
+				<li class="modifier_matiere"><a href="Matieres_Modif.aspx">Modifier matière</a></li>
+			</ul>
+			<h5>Gestion des absences</h5>
+			<ul class="toggle">
+				<li class="afficher_absences"><a href="Absences.aspx">Afficher les absences</a></li>
+			</ul>
+		</ul>
+		<h3>Gestion des évènement</h3>
+		<ul class="toggle">
+			<li class="afficher_evenements"><a href="Evenements.aspx">Afficher les évèvement</a></li>
+			<li class="ajouter_event"><a href="Evenements_Ajout.aspx">Ajouter évènement</a></li>
+			<li class="modifier_event"><a href="Evenements_Modif.aspx">Modifier évènement</a></li>
+		</ul>
+		<h3>Gestion des congés</h3>
+		<ul class="toggle">
+			<li class="afficher_conges"><a href="Conges.aspx">Afficher les congés</a></li>
+			<li class="modifier_conge"><a href="Conges_Modif.aspx">Modifier congé</a></li>
+		</ul>
+		<h3>Gestion des paiements</h3>
+		<ul class="toggle">
+			<li class="afficher_paiements"><a href="Paiements.aspx">Afficher les paiements</a></li>
+			<li class="ajouter_paiement"><a href="Paiements_Ajout.aspx">Ajouter un paiement</a></li>
+			<li class="modifier_paiement"><a href="Paiements_Historiques.aspx">Historique des paiements</a></li>
+			<!--<li class="supprimer_paiement"><a href="#">Supprimer paiement</a></li>-->
+		</ul>	
+		<h3>Gestion des services</h3>
+			<ul class="toggle">
+				<li class="afficher_services"><a href="Services.aspx">Afficher des services</a></li>
+				<li class="ajouter_service"><a href="Services_Ajout.aspx">Ajouter service</a></li>
+				<li class="modifier_service"><a href="Services_Modif.aspx">Modifier service</a></li>
+			</ul>
+		<footer>
+			<hr />
+			<p><strong>Copyright &copy; 2014 <a href="https://twitter.com/Ala_ben_slama" target="_blank">Ala Ben Slama</a>&nbsp;<a href="https://twitter.com/JebaliMeher" target="_blank">Meher Jebali</a></strong></p>
+			<p>Projet de fin d'études <a href="#">ISETCH</a></p>
+		</footer>
+	</aside>
+	<div id="contenu">
+        <asp:ContentPlaceHolder ID="test" runat="server">
+        </asp:ContentPlaceHolder>
+	</div>
+</div>
+</form>
+</body>
+</html>
